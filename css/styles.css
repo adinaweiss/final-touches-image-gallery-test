@@ -96,7 +96,7 @@ button:hover {
 
 .lightbox-content .close {
     position: absolute;
-    top: -30px;
+    top: -50px;
     right: 0;
     font-size: 24px;
     color: white;
@@ -118,6 +118,6 @@ button:hover {
 }
 
 .lightbox-content .arrow.next {
-    right: -50px;
+    right: -30px;
 }
 
