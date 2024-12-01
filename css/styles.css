@@ -160,10 +160,9 @@ button:hover {
     top: 0; /* Aligns to the top of the container */
     right: 0; /* Adjusts to the right side */
     transform: translate(50%, -50%); /* Slight offset for visual alignment */
-    font-size: 24px;
+    font-size: 48px;
     color: white;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.5); /* Optional background for better visibility */
     padding: 5px;
     border-radius: 50%;
     z-index: 3; /* Ensure it’s above the image */
