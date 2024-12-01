@@ -12,6 +12,7 @@ header {
     padding: 1rem 0;
 }
 
+/*
 #gallery {
     display: flex;
     flex-wrap: wrap;
@@ -19,9 +20,44 @@ header {
     padding: 20px;
     justify-content: center;
 }
+*/
 
 #gallery img {
     max-width: 200px;
     border: 2px solid #f47321;
     border-radius: 5px;
+}
+
+/*  NEW FROM CHATGPT*/
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Space between images */
+    padding: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Hover effect */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+button {
+    background-color: #f47321;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d65e1a; /* Darker orange on hover */
 }
