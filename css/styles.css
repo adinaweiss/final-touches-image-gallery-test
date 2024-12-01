@@ -102,7 +102,7 @@ button:hover {
     color: white;
     cursor: pointer;
 }
-
+/*
 .lightbox-content .arrow {
     position: absolute;
     top: 50%;
@@ -119,5 +119,56 @@ button:hover {
 
 .lightbox-content .arrow.next {
     right: -30px;
+}
+*/
+/* Base styles for arrows */
+.lightbox-content .arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 40px; /* Base size */
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+/* Left arrow */
+.lightbox-content .arrow.prev {
+    left: 20px; /* Adjust position */
+}
+
+/* Right arrow */
+.lightbox-content .arrow.next {
+    right: 20px; /* Adjust position */
+}
+
+/* Larger click/tap area */
+.lightbox-content .arrow::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .lightbox-content .arrow {
+        font-size: 30px; /* Smaller arrows for phones */
+    }
+    .lightbox-content .arrow.prev {
+        left: 10px; /* Bring closer to the center */
+    }
+    .lightbox-content .arrow.next {
+        right: 10px; /* Bring closer to the center */
+    }
+}
+
+/* For very small screens (e.g., 480px) */
+@media (max-width: 480px) {
+    .lightbox-content .arrow {
+        font-size: 25px; /* Even smaller arrows */
+    }
 }
 
