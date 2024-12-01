@@ -31,3 +31,27 @@ function openLightbox(src) {
 document.querySelectorAll('#gallery img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src));
 });
+// Select the lightbox and its elements
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.lightbox-content .close');
+
+// Attach click event to each gallery image
+document.querySelectorAll('#gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src; // Set lightbox image source
+        lightbox.classList.add('visible'); // Show the lightbox
+    });
+});
+
+// Close the lightbox when clicking the close button
+closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('visible');
+});
+
+// Close the lightbox when clicking outside the image
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('visible');
+    }
+});
