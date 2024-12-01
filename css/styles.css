@@ -61,82 +61,62 @@ button {
 button:hover {
     background-color: #d65e1a; /* Darker orange on hover */
 }
-/* Lightbox Container */
+/* Lightbox Styles */
 #lightbox {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    backdrop-filter: blur(5px); /* Blurs the background */
-    visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.3s ease;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Make Lightbox Visible */
 #lightbox.visible {
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
 }
 
-/* Lightbox Content */
 .lightbox-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90%;
 }
 
 .lightbox-content img {
-    width: 100%;
-    height: auto;
+    max-width: 90%;
+    max-height: 90%;
     border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Close Button */
 .lightbox-content .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 2rem;
+    top: -30px;
+    right: 0;
+    font-size: 24px;
     color: white;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    border-radius: 50%;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    line-height: 1;
-    z-index: 1001;
 }
-/* Navigation Arrows */
-.arrow {
+
+.lightbox-content .arrow {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    font-size: 2.5rem;
+    font-size: 40px;
     color: white;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    padding: 0.5rem 1rem;
     user-select: none;
+    transform: translateY(-50%);
 }
 
-.arrow.prev {
-    left: 20px;
+.lightbox-content .arrow.prev {
+    left: -50px;
 }
 
-.arrow.next {
-    right: 20px;
-}
-
-.arrow:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: black;
+.lightbox-content .arrow.next {
+    right: -50px;
 }
